@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Scoops Ice Cream</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>🍨 Cool Scoops Ice Cream Shop</h1>
+        <p>Fresh • Creamy • Delicious</p>
+    </header>
+
+    <section class="hero">
+        <h2>Your Happiness Starts With Ice Cream!</h2>
+        <p>Choose your favorite flavor and enjoy every scoop.</p>
+        <button>Order Now</button>
+    </section>
+
+    <section class="products">
+        {% for item in ice_creams %}
+        <div class="card">
+            <div class="emoji">{{ item.image }}</div>
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.price }}</p>
+            <button>Add to Cart</button>
+        </div>
+        {% endfor %}
+    </section>
+
+    <footer>
+        <p>© 2026 Cool Scoops Ice Cream Shop</p>
+    </footer>
+
+</body>
+</html>
